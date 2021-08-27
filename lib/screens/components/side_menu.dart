@@ -14,75 +14,77 @@ class SideMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-      child: Column(
-        children: [
-          PersonalInfo(),
-          Expanded(
-            child: SingleChildScrollView(
-              padding: EdgeInsets.all(defaultPadding),
-              child: Column(
-                children: [
-                  AreaInfoText(text: "Ngousso", title: "Residence"),
-                  AreaInfoText(text: "Yaounde", title: "City"),
-                  AreaInfoText(text: "19", title: "Age"),
-                  Skills(),
-                  SizedBox(height: defaultPadding),
-                  Codings(),
-                  SizedBox(height: defaultPadding),
-                  Knowledge(),
-                  Divider(),
-                  SizedBox(height: defaultPadding / 2),
-                  TextButton(
-                    onPressed: () {},
-                    child: FittedBox(
+    return SafeArea(
+      child: Drawer(
+        child: Column(
+          children: [
+            PersonalInfo(),
+            Expanded(
+              child: SingleChildScrollView(
+                padding: EdgeInsets.all(defaultPadding),
+                child: Column(
+                  children: [
+                    AreaInfoText(text: "Ngousso", title: "Residence"),
+                    AreaInfoText(text: "Yaounde", title: "City"),
+                    AreaInfoText(text: "19", title: "Age"),
+                    Skills(),
+                    SizedBox(height: defaultPadding),
+                    Codings(),
+                    SizedBox(height: defaultPadding),
+                    Knowledge(),
+                    Divider(),
+                    SizedBox(height: defaultPadding / 2),
+                    TextButton(
+                      onPressed: () {},
+                      child: FittedBox(
+                        child: Row(
+                          children: [
+                            Text("Download CV",
+                                style: TextStyle(
+                                    color: Theme.of(context)
+                                        .textTheme
+                                        .bodyText1!
+                                        .color)),
+                            SizedBox(
+                              width: defaultPadding / 2,
+                            ),
+                            SvgPicture.asset("assets/icons/download.svg"),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: defaultPadding),
+                      color: Color(0xFF24242E),
                       child: Row(
                         children: [
-                          Text("Download CV",
-                              style: TextStyle(
-                                  color: Theme.of(context)
-                                      .textTheme
-                                      .bodyText1!
-                                      .color)),
-                          SizedBox(
-                            width: defaultPadding / 2,
+                          Spacer(),
+                          IconButton(
+                            onPressed: () {},
+                            icon: SvgPicture.asset("assets/icons/linkedin.svg"),
                           ),
-                          SvgPicture.asset("assets/icons/download.svg"),
+                          IconButton(
+                            onPressed: () {},
+                            icon: SvgPicture.asset("assets/icons/dribble.svg"),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: SvgPicture.asset("assets/icons/github.svg"),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: SvgPicture.asset("assets/icons/twitter.svg"),
+                          ),
+                          Spacer(),
                         ],
                       ),
                     ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: defaultPadding),
-                    color: Color(0xFF24242E),
-                    child: Row(
-                      children: [
-                        Spacer(),
-                        IconButton(
-                          onPressed: () {},
-                          icon: SvgPicture.asset("assets/icons/linkedin.svg"),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: SvgPicture.asset("assets/icons/dribble.svg"),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: SvgPicture.asset("assets/icons/github.svg"),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: SvgPicture.asset("assets/icons/twitter.svg"),
-                        ),
-                        Spacer(),
-                      ],
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
